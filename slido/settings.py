@@ -90,20 +90,20 @@ WSGI_APPLICATION = 'slido.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'api-test-slido',
-        'USER': 'postgres',
-        'PASSWORD': 'Moh@med9394@',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    },
-}
-
 # DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'api-test-slido',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Moh@med9394@',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     },
 # }
+
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 
 REST_FRAMEWORK = {
