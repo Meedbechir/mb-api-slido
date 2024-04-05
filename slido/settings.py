@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os 
 
 import dj_database_url
 
@@ -91,14 +92,8 @@ WSGI_APPLICATION = 'slido.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         "postgres://slido_api_user:LaAxFoziTlkpq177TBoSdxKmLxxLfbMx@dpg-co7rvi779t8c73eooolg-a.oregon-postgres.render.com/slido_api"
-#     },
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse("postgres://slido_api_user:LaAxFoziTlkpq177TBoSdxKmLxxLfbMx@dpg-co7rvi779t8c73eooolg-a.oregon-postgres.render.com/slido_api")
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
