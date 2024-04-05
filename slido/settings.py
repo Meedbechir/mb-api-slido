@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
 from pathlib import Path
 import os 
 
@@ -47,7 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'drf_yasg',    
+    # 'drf_yasg',    
 ]
 
 MIDDLEWARE = [
@@ -92,8 +91,19 @@ WSGI_APPLICATION = 'slido.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'api-test-slido',
+        'USER': 'postgres',
+        'PASSWORD': 'Moh@med9394@',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
 
 REST_FRAMEWORK = {
@@ -122,7 +132,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'users.User'
 
 
 # Internationalization
