@@ -19,7 +19,6 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/user/', include('users.urls')),
     path('api/', include('sondage_one.urls')),
     path('api/sondage_two/', include('sondage_two.urls')),
    #  path('api/sondage_three/', include('sondage_three.urls')),
